@@ -11,7 +11,9 @@
     "author": "Sherbiny",
     "license": "ISC",
     "dependencies": {
+        "ejs": "^3.1.9",
         "express": "^4.18.2",
+        "express-validator": "^7.0.1",
         "mongoose": "^7.6.3",
         "morgan": "^1.10.0"
     },
