@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr class="table-header">
+            <th scope="col" class="text-white">Original URL</th>
+            <th scope="col" class="text-white">Shortened URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let {target, slug} of links) { %>
+            <tr>
+                <td>
+                    <a href="<%= target %>">
+                        <%= target %>
+                    </a>
+                </td>
+                <td>
+                    <a href="/link/<%= slug %>">
+                        <%= baseURL %>/link/<%= slug %>
+                    </a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+  

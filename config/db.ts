@@ -1,9 +1,7 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const main = async () => {
-    await mongoose.connect(
-        "mongodb+srv://zayat:32425262@vue-mongodb.dnlpi.mongodb.net/url-shorner"
-    );
+    await mongoose.connect(process.env.DATABASE_URL as string);
 
     console.log("Connected to db.");
 };

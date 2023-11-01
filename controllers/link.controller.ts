@@ -17,11 +17,13 @@ export const shorten: RequestHandler = async (req, res, next) => {
     try {
         req.body.slug = req.body.slug.toLocaleLowerCase();
         let { slug } = req.body;
+
         let link = await LinkModel.findOne({ slug });
         if (link) return next({ status: 400, msg: ["Slug is already used!"] });
 
         link = await LinkModel.create(req.body);
-        res.status(200).json(link);
+        req.flash("success", "Link created successfully!");
+        res.redirect("/");
     } catch (e) {
         next(e);
     }
