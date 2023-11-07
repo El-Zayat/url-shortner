@@ -5,6 +5,7 @@ export const flashHandler: RequestHandler = async (req, res, next) => {
         errors: req.flash("error"),
         warnings: req.flash("warning"),
         successes: req.flash("success"),
+        auth: req.flash("auth"),
     };
     next();
 };

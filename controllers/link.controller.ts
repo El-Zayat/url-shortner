@@ -20,6 +20,7 @@ export const shorten: RequestHandler = async (req, res, next) => {
 
         let link = await LinkModel.findOne({ slug });
         if (link) return next({ status: 400, msg: ["Slug is already used!"] });
+        req.body.userId = req.session.user?._id;
 
         link = await LinkModel.create(req.body);
         req.flash("success", "Link created successfully!");

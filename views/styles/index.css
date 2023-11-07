@@ -1,5 +1,6 @@
 body {
     padding: 100px;
+    width: 100vw;
 }
 
 form {
@@ -12,15 +13,17 @@ form {
     min-width: 300px;
 }
 
-.table {
-    margin-top: 50px;
+table {
+    width: 100%;
+    word-wrap: break-word;
+    border-collapse: collapse;
+}
+
+td a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .table-header {
     background-color: dodgerblue;
-}
-
-.btn {
-    background-color: dodgerblue;
-    color: white;
 }

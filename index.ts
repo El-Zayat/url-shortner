@@ -3,13 +3,19 @@ import morgan from "morgan";
 import cors from "cors";
 import linkRouter from "./routers/link.router";
 import homeRouter from "./routers/home.router";
+import loginRouter from "./routers/login.router";
+import registerRouter from "./routers/register.router";
 import connectFlash from "connect-flash";
 import { errorHandler, flashHandler } from "./helpers";
 import expressSession from "express-session";
-import { expressSessionConfig, port } from "./config/conf";
+import { port } from "./config/conf";
+
+// import difinitions
+import "./types/definitions";
 
 // load environment variables
 require("dotenv").config();
+import { expressSessionConfig } from "./config/sessionConfig";
 
 // initialize express application
 const app = express();
@@ -38,6 +44,8 @@ app.use("/", homeRouter);
 
 // use routers
 app.use("/link", linkRouter);
+app.use("/login", loginRouter);
+app.use("/register", registerRouter);
 
 // error handler
 app.use(errorHandler);
